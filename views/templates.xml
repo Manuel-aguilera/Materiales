@@ -1,0 +1,17 @@
+<odoo>
+   <data>
+      <!-- <template id="assets_frontend" name="Modulo propio">
+        <xpath expr="." position="inside">
+          <script type="text/javascript" src="materiales/static/src/js/script.js"></script>
+          <link rel="stylesheet" href="materiales/static/src/css/style.css"/>
+        </xpath> 
+      </template> -->
+      <template id="index" name="Template propio">
+         <!-- <t t-call="website.layout">  -->
+          <div class="oe_structure">
+            <strong>Holla mundo, bienvenido al centro de materiales</strong>
+          </div>
+        <!-- </t>  -->
+      </template>
+    </data> 
+</odoo>

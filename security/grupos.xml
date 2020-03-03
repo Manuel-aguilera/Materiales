@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record id="materiales_id" model="ir.module.category">
+            <field name="name">Materiales</field>
+        </record>
+        <record id="materiales_admin_id" model="res.groups">
+            <field name="name">Administrador</field>
+            <field name="category_id" ref="materiales_id"/>
+        </record>
+        <record id="materiales_user_id" model="res.groups">
+            <field name="name">Usuario</field>
+            <field name="category_id" ref="materiales_id"/>
+        </record>
+    </data>
+</odoo>

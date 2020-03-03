@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <menuitem 
+      id="Menu_principal"
+      name="Materiales"
+      groups="materiales.materiales_admin_id"
+      sequence="99"
+    />
+    <menuitem 
+      name="Productos"
+      id="Materiales_productos"
+      parent="Menu_principal"
+      action="product_action"
+      sequence="10"
+    />
+
+  </data>
+</odoo>
+
+<!-- groups="materiales.materiales_admin_id" -->
+<!-- parent="base.menu_apps" -->

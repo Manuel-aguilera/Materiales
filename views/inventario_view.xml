@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <record id="data_tree" model="ir.ui.view">
+            <field name="name">data.tree.custom </field>
+            <field name="model">materiales.inventario</field>
+            <field name="arch" type="xml">  
+                <tree string="Tree View Name">
+                    <field name="check"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

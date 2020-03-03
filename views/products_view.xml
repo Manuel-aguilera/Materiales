@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="products_tree" model="ir.ui.view">
+      <field name="name">materiales.products.tree</field>
+      <field name="model">materiales.products</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">  
+        <tree string="Tree view name">
+          <field name="field_bool"/>
+          <field name="field_int"/>
+          <field name="field_float"/>
+          <field name="field_select"/>
+          <field name="field_date"/>
+          <field name="name"/>
+          <field name="field_text"/>
+          <field name="field_HTML"/>
+          <!-- <field name="field_many2one"/> -->
+        </tree>
+      </field>
+    </record>
+
+    <record id="products_form" model="ir.ui.view">
+      <field name="name">materiales.products.form</field>
+      <field name="model">materiales.products</field>
+      <field name="type">form</field>
+      <field name="priority">13</field>
+      <field name="arch" type="xml">  
+        <form string="Form view name">
+          <sheet>
+            <group>
+              <field name="field_bool"/>
+              <field name="field_int"/>
+              <field name="field_float"/>
+              <field name="field_select"/>
+              <field name="field_date"/>
+              <field name="name"/>
+              <field name="field_text"/>
+              <field name="field_HTML"/>
+              <!-- <field name="field_many2one"/> -->
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record> 
+
+    <record id="products_search" model="ir.ui.view">
+      <field name="name">materiales.products.search</field>
+      <field name="model">materiales.products</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="field_bool"/>
+              <field name="field_int"/>
+              <field name="field_float"/>
+              <field name="field_select"/>
+              <field name="field_date"/>
+              <field name="name"/>
+              <field name="field_text"/>
+              <field name="field_HTML"/>
+        </search>
+      </field>
+    </record>
+
+    <record id="products_kanban" model="ir.ui.view">
+      <field name="name">materiales.products.kanban</field>
+      <field name="model">materiales.products</field>
+      <field name="priority">10</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name = "name"/>
+          <templates>
+            <t t-name="kanban-box">
+             <div>
+                <ul>
+                  <li t-if="record.name.raw_value">Class Name: <field name="name"/></li>
+                </ul>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <record id="product_action" model="ir.actions.act_window">
+      <field name="name">Materiales</field>
+      <field name="res_model">materiales.products</field>
+      <field name="views_type">form</field>
+      <field name="view_mode">kanban,tree,form,search</field>
+    </record> 
+  </data>
+</odoo>
