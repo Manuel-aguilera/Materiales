@@ -26,9 +26,10 @@
     'data': [
         'security/grupos.xml',
         'security/ir.model.access.csv',
+        'views/departamentos_view.xml',
         'views/movimientos.xml',
         'views/inventario_view.xml',
-        'views/products_view.xml',
+        'views/productos_view.xml',
         'views/menu_view.xml',
         'views/views.xml',
         'views/templates.xml',

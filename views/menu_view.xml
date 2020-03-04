@@ -12,8 +12,15 @@
       name="Productos"
       id="Materiales_productos"
       parent="Menu_principal"
-      action="product_action"
+      action="productos_action"
       sequence="10"
+    />
+    <menuitem 
+      name="Departamentos"
+      id="Materiales_departamentos"
+      parent="Menu_principal"
+      action="departamentos_action"
+      sequence="11"
     />
 
   </data>

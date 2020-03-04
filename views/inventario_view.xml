@@ -1,7 +1,7 @@
 <odoo>
     <data>
-        <record id="data_tree" model="ir.ui.view">
-            <field name="name">data.tree.custom </field>
+        <record id="inventario_tree" model="ir.ui.view">
+            <field name="name">materiales.inventario.tree </field>
             <field name="model">materiales.inventario</field>
             <field name="arch" type="xml">  
                 <tree string="Tree View Name">

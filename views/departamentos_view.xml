@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="departamentos" model="ir.ui.view">
+            <field name="name">materiales.departamentos.tree</field>
+            <field name="model">materiales.departamentos</field>
+            <field name="type">tree</field>
+            <field name="priority">10</field>
+            <field name="arch" type="xml">  
+                <tree string="Tree view name">
+                    <field name="clave_depto"/>
+                    <field name="encargado"/>
+                    <!-- <field name="field_many2one"/> -->
+                </tree>
+            </field>
+        </record>
+
+        <record id="departamentos_form" model="ir.ui.view">
+            <field name="name">materiales.departamentos.form</field>
+            <field name="model">materiales.departamentos</field>
+            <field name="type">form</field>
+            <field name="priority">11</field>
+            <field name="arch" type="xml">  
+                <form string="Form view name">
+                <sheet>
+                    <group>
+                        <field name="clave_depto"/>
+                        <field name="encargado"/>
+                    <!-- <field name="field_many2one"/> -->
+                    </group>
+                </sheet>
+                </form>
+            </field>
+            </record> 
+
+            <record id="departamentos_search" model="ir.ui.view">
+            <field name="name">materiales.departamentos.search</field>
+            <field name="model">materiales.departamentos</field>
+            <field name="priority">12</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="clave_depto"/>
+                    <field name="encargado"/>
+                </search>
+            </field>
+            </record>
+
+            <record id="departamentos_kanban" model="ir.ui.view">
+            <field name="name">materiales.departamentos.kanban</field>
+            <field name="model">materiales.departamentos</field>
+            <field name="priority">13</field>
+            <field name="arch" type="xml">
+                <kanban>
+                
+                <templates>
+                    <t t-name="kanban-box">
+                    <div>
+                        <ul>
+                        <group>
+                            <li t-if="record.name.raw_value">Clave departamento: <field name="clave_depto"/></li>
+                            <li t-if="record.name.raw_value">Encargado: <field name="encargado"/></li>
+                        </group>
+                        </ul>
+                    </div>
+                    </t>
+                </templates>
+                </kanban>
+            </field>
+            </record>
+
+            <record id="departamentos_action" model="ir.actions.act_window">
+            <field name="name">Departamentos</field>
+            <field name="res_model">materiales.departamentos</field>
+            <field name="views_type">form</field>
+            <field name="view_mode">tree,kanban,form,search</field>
+        </record> 
+    </data>
+</odoo>

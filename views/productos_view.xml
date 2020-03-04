@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="productos_tree" model="ir.ui.view">
+      <field name="name">materiales.productos.tree</field>
+      <field name="model">materiales.productos</field>
+      <field name="type">tree</field>
+      <field name="priority">10</field>
+      <field name="arch" type="xml">  
+        <tree string="Tree view name">
+          <field name="serie"/>
+          <field name="name"/>
+          <field name="fecha_adquisicion"/>
+          <field name="departamento"/>
+          <field name="costo"/>
+          <field name="descripcion"/>
+          <!-- <field name="field_many2one"/> -->
+        </tree>
+      </field>
+    </record>
+
+    <record id="productos_form" model="ir.ui.view">
+      <field name="name">materiales.productos.form</field>
+      <field name="model">materiales.productos</field>
+      <field name="type">form</field>
+      <field name="priority">11</field>
+      <field name="arch" type="xml">  
+        <form string="Form view name">
+          <sheet>
+            <group>
+                <field name="serie"/>
+                <field name="name"/>
+                <field name="fecha_adquisicion"/>
+                <field name="departamento"/>
+                <field name="costo"/>
+                <field name="descripcion"/>
+              <!-- <field name="field_many2one"/> -->
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record> 
+
+    <record id="productos_search" model="ir.ui.view">
+      <field name="name">materiales.productos.search</field>
+      <field name="model">materiales.productos</field>
+      <field name="priority">12</field>
+      <field name="arch" type="xml">
+        <search>
+                <field name="serie"/>
+                <field name="name"/>
+                <field name="fecha_adquisicion"/>
+                <field name="departamento"/>
+                <field name="costo"/>
+                <field name="descripcion"/>
+        </search>
+      </field>
+    </record>
+
+    <record id="productos_kanban" model="ir.ui.view">
+      <field name="name">materiales.productos.kanban</field>
+      <field name="model">materiales.productos</field>
+      <field name="priority">13</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="name"/>
+          <templates>
+            <t t-name="kanban-box">
+             <div>
+                <ul>
+                  <group>
+                    <li t-if="record.name.raw_value">No. serie: <field name="serie"/></li>
+                    <li t-if="record.name.raw_value">Producto: <field name="name"/></li>
+                    <li t-if="record.name.raw_value">Fecha compra: <field name="fecha_adquisicion"/></li>
+                    <li t-if="record.name.raw_value">Departamento: <field name="departamento"/></li>
+                    <li t-if="record.name.raw_value">Costo unidad: <field name="costo"/></li>
+                    <li t-if="record.name.raw_value">Dyescripcion: <field name="descripcion"/></li>
+                  </group>
+                </ul>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <record id="productos_action" model="ir.actions.act_window">
+      <field name="name">Productos</field>
+      <field name="res_model">materiales.productos</field>
+      <field name="views_type">form</field>
+      <field name="view_mode">tree,kanban,form,search</field>
+    </record> 
+  </data>
+</odoo>

@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <record id="movimientos_tree" model="ir.ui.view">
+            <field name="name">materiales.movimientos.tree </field>
+            <field name="model">materiales.movimientos</field>
+            <field name="arch" type="xml">  
+                <tree string="Tree View Name">
+                    <field name="check"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
