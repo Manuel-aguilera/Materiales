@@ -22,6 +22,20 @@
       action="departamentos_action"
       sequence="11"
     />
+    <menuitem 
+      name="Movimientos"
+      id="Materiales_movimientos"
+      parent="Menu_principal"
+      action="movimientos_action"
+      sequence="12"
+    />
+    <menuitem 
+      name="Inventario"
+      id="Materiales_inventario"
+      parent="Menu_principal"
+      action="inventario_action"
+      sequence="13"
+    />
 
   </data>
 </odoo>

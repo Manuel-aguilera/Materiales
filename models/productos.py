@@ -5,13 +5,13 @@ from odoo import models, fields, api
 
 class Productos(models.Model):
     _name = 'materiales.productos'
-    serie = fields.Integer("No Serie")
-    name = fields.Char("Producto")
-    fecha_adquisicion = fields.Date("Fecha compra")
+    serie = fields.Integer("No Serie", required=True)
+    name = fields.Char("Producto", required=True)
+    fecha_adquisicion = fields.Date("Fecha compra", required=True)
     # departamento = fields.Selection(
     #     [('a', 'A'), ('b', 'B')], "Campo tipo selection")
-    departamento = fields.Char("Departamento")
-    costo = fields.Float('Costo')
+    departamento = fields.Char("Departamento", required=True)
+    costo = fields.Float('Costo', required=True)
     descripcion = fields.Text("Descripción")
 
 

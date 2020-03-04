@@ -64,18 +64,23 @@
       <field name="priority">13</field>
       <field name="arch" type="xml">
         <kanban>
-          <field name="name"/>
+          <!-- <field name="serie"/>
+          <field name="producto"/>
+          <field name="fecha_adquisicion"/>
+          <field name="departamento"/>
+          <field name="costo"/>
+          <field name="descripcion"/> -->
           <templates>
             <t t-name="kanban-box">
              <div>
                 <ul>
                   <group>
-                    <li t-if="record.name.raw_value">No. serie: <field name="serie"/></li>
-                    <li t-if="record.name.raw_value">Producto: <field name="name"/></li>
-                    <li t-if="record.name.raw_value">Fecha compra: <field name="fecha_adquisicion"/></li>
-                    <li t-if="record.name.raw_value">Departamento: <field name="departamento"/></li>
-                    <li t-if="record.name.raw_value">Costo unidad: <field name="costo"/></li>
-                    <li t-if="record.name.raw_value">Dyescripcion: <field name="descripcion"/></li>
+                    <li t-if="record.serie.raw_value">No. serie:<field name="serie"/></li>
+                    <li t-if="record.name.raw_value">Producto:<field name="name"/></li>
+                    <li t-if="record.fecha_adquisicion.raw_value">Fecha compra:<field name="fecha_adquisicion"/></li>
+                    <li t-if="record.departamento.raw_value">Departamento:<field name="departamento"/></li>
+                    <li t-if="record.costo.raw_value">Costo unidad:<field name="costo"/></li>
+                    <li t-if="record.descripcion.raw_value">Descripción:<field name="descripcion"/></li>
                   </group>
                 </ul>
               </div>

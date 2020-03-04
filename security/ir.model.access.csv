@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 productos_access,Modelo productos,model_materiales_productos,materiales_admin_id,1,1,1,1
 departamentos_access,Modelo departamentos,model_materiales_departamentos,materiales_admin_id,1,1,1,1
+movimientos_access,Modelo movimientos,model_materiales_movimientos,materiales_admin_id,1,1,1,1
+inventario_access,Modelo inventario,model_materiales_inventario,materiales_admin_id,1,1,1,1

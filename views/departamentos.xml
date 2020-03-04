@@ -9,6 +9,7 @@
             <field name="arch" type="xml">  
                 <tree string="Tree view name">
                     <field name="clave_depto"/>
+                    <field name="name"/>
                     <field name="encargado"/>
                     <!-- <field name="field_many2one"/> -->
                 </tree>
@@ -25,6 +26,7 @@
                 <sheet>
                     <group>
                         <field name="clave_depto"/>
+                        <field name="name"/>
                         <field name="encargado"/>
                     <!-- <field name="field_many2one"/> -->
                     </group>
@@ -40,6 +42,7 @@
             <field name="arch" type="xml">
                 <search>
                     <field name="clave_depto"/>
+                    <field name="name"/>
                     <field name="encargado"/>
                 </search>
             </field>
@@ -51,14 +54,14 @@
             <field name="priority">13</field>
             <field name="arch" type="xml">
                 <kanban>
-                
                 <templates>
                     <t t-name="kanban-box">
                     <div>
                         <ul>
                         <group>
-                            <li t-if="record.name.raw_value">Clave departamento: <field name="clave_depto"/></li>
-                            <li t-if="record.name.raw_value">Encargado: <field name="encargado"/></li>
+                            <li t-if="record.clave_depto.raw_value">Clave departamento: <field name="clave_depto"/></li>
+                            <li t-if="record.name.raw_value">Departamento: <field name="name"/></li>
+                            <li t-if="record.encargado.raw_value">Encargado: <field name="encargado"/></li>
                         </group>
                         </ul>
                     </div>

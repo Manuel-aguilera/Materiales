@@ -7,14 +7,16 @@ from odoo import models, fields, api
 
 class Movimientos(models.Model):
     _name = 'materiales.movimientos'
-    check = fields.Boolean("Checar")
-
-
-# field_many2one = fields.Many2one(
-#     'product.template', 'Campo Many2one')
-
-# field_one2many = fields.One2many(
-#     'materiales.products', 'field_many2one', 'Campo One2many')
+    clave_mov = fields.Integer("Clave movimiento", required="True")
+    producto_id = fields.Many2one(
+        'materiales.productos', 'Producto', required=True)
+    # producto_id = fields.One2many(
+    #     'materiales.productos', 'producto', 'Producto')
+    # departamento = fields.Integer("Departamento", required="True")
+    departamento_id = fields.Many2one(
+        'materiales.departamentos', 'Departamento', required=True)
+    fecha_entrada = fields.Date("Fecha entrada", required="True")
+    fecha_salida = fields.Date("Fecha salida", required="True")
 
 # field_many2many = fields.Many2many(
 #     'sale.order', string='Campo Many2Many')
