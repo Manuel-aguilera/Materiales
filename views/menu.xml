@@ -29,12 +29,21 @@
       action="movimientos_action"
       sequence="12"
     />
-    <menuitem 
+
+    <!-- Para inventarios, pero ahora no lo vamos a utilizar -->
+    <!-- <menuitem 
       name="Inventario"
       id="Materiales_inventario"
       parent="Menu_principal"
       action="inventario_action"
       sequence="13"
+    /> -->
+    <menuitem 
+      name="Series"
+      id="Materiales_series"
+      parent="Menu_principal"
+      action="series_action"
+      sequence="12"
     />
 
   </data>

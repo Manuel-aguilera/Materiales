@@ -9,13 +9,12 @@
       <field name="priority">10</field>
       <field name="arch" type="xml">  
         <tree string="Tree view name">
-          <field name="serie"/>
+          <field name="serie_id"/>
           <field name="name"/>
-          <field name="fecha_adquisicion"/>
-          <field name="departamento"/>
           <field name="costo"/>
+          <field name="cantidad"/>
           <field name="descripcion"/>
-          <!-- <field name="field_many2one"/> -->
+          <field name="num_series_ids"/>
         </tree>
       </field>
     </record>
@@ -23,37 +22,46 @@
     <record id="productos_form" model="ir.ui.view">
       <field name="name">materiales.productos.form</field>
       <field name="model">materiales.productos</field>
-      <field name="type">form</field>
       <field name="priority">11</field>
       <field name="arch" type="xml">  
-        <form string="Form view name">
+        <form string="Productos">
           <sheet>
-            <group>
-                <field name="serie"/>
+            <field name="foto" widget="image" class="oe_left oe_avatar"/>
+            <div class="oe_tittle oe_text_center">
+              <h3>
                 <field name="name"/>
-                <field name="fecha_adquisicion"/>
-                <field name="departamento"/>
-                <field name="costo"/>
-                <field name="descripcion"/>
-              <!-- <field name="field_many2one"/> -->
+              </h3>
+            </div>
+            <group class="oe_right">
+              <group>
+                  <field name="serie_id"/>
+                  <field name="descripcion"/>
+              </group>
+              <group>
+                  <field name="costo"/>
+                  <field name="cantidad"/>
+              </group>
+            </group>
+            <group>
+              <field name="num_series_ids"/>
             </group>
           </sheet>
         </form>
       </field>
     </record> 
-
+<!-- 
     <record id="productos_search" model="ir.ui.view">
       <field name="name">materiales.productos.search</field>
       <field name="model">materiales.productos</field>
       <field name="priority">12</field>
       <field name="arch" type="xml">
         <search>
-                <field name="serie"/>
+                <field name="serie_id"/>
                 <field name="name"/>
-                <field name="fecha_adquisicion"/>
-                <field name="departamento"/>
                 <field name="costo"/>
+                <field name="cantidad"/>
                 <field name="descripcion"/>
+                <field name="num_series_ids"/>
         </search>
       </field>
     </record>
@@ -64,23 +72,17 @@
       <field name="priority">13</field>
       <field name="arch" type="xml">
         <kanban>
-          <!-- <field name="serie"/>
-          <field name="producto"/>
-          <field name="fecha_adquisicion"/>
-          <field name="departamento"/>
-          <field name="costo"/>
-          <field name="descripcion"/> -->
           <templates>
             <t t-name="kanban-box">
              <div>
                 <ul>
                   <group>
-                    <li t-if="record.serie.raw_value">No. serie:<field name="serie"/></li>
+                    <li t-if="record.serie_id.raw_value">No. serie:<field name="serie_id"/></li>
                     <li t-if="record.name.raw_value">Producto:<field name="name"/></li>
-                    <li t-if="record.fecha_adquisicion.raw_value">Fecha compra:<field name="fecha_adquisicion"/></li>
-                    <li t-if="record.departamento.raw_value">Departamento:<field name="departamento"/></li>
                     <li t-if="record.costo.raw_value">Costo unidad:<field name="costo"/></li>
+                    <li t-if="record.cantidad.raw_value">Cantidad:<field name="cantidad"/></li>
                     <li t-if="record.descripcion.raw_value">Descripción:<field name="descripcion"/></li>
+                    <li t-if="record.num_series_ids.raw_value">Descripción:<field name="num_series_ids"/></li>
                   </group>
                 </ul>
               </div>
@@ -88,13 +90,14 @@
           </templates>
         </kanban>
       </field>
-    </record>
+    </record> -->
 
     <record id="productos_action" model="ir.actions.act_window">
       <field name="name">Productos</field>
       <field name="res_model">materiales.productos</field>
-      <field name="views_type">form</field>
-      <field name="view_mode">tree,kanban,form,search</field>
+      <field name="views_type">tree</field>
+      <field name="view_mode">tree,form</field>
+      <!-- <field name="view_mode">tree,kanban,form,search</field> -->
     </record> 
   </data>
 </odoo>

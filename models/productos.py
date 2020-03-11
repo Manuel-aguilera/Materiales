@@ -5,14 +5,18 @@ from odoo import models, fields, api
 
 class Productos(models.Model):
     _name = 'materiales.productos'
-    serie = fields.Integer("No Serie", required=True)
+    foto = fields.Binary("Imagen")
+    # serie = fields.Integer("No Serie", required=True)
+    serie_id = fields.Many2one("materiales.series", "Serie")
     name = fields.Char("Producto", required=True)
-    fecha_adquisicion = fields.Date("Fecha compra", required=True)
+    # fecha_adquisicion = fields.Date("Fecha compra", required=True)
     # departamento = fields.Selection(
     #     [('a', 'A'), ('b', 'B')], "Campo tipo selection")
-    departamento = fields.Char("Departamento", required=True)
     costo = fields.Float('Costo', required=True)
     descripcion = fields.Text("Descripción")
+    cantidad = fields.Integer("Cantidad")
+    # num_series_ids = fields.One2many(
+    #     "materiales.series", serie_id, "No. Series")
 
 
 # field_many2one = fields.Many2one(

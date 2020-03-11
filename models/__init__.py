@@ -5,3 +5,5 @@ from . import productos
 from . import inventario
 from . import movimientos
 from . import departamentos
+from . import series
+from . import ubicaciones
