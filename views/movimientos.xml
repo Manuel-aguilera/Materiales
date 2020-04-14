@@ -1,87 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <record id="movimientos_tree" model="ir.ui.view">
-            <field name="name">materiales.movimientos.tree</field>
-            <field name="model">materiales.movimientos</field>
-            <field name="type">tree</field>
-            <field name="priority">10</field>
-            <field name="arch" type="xml">  
-                <tree string="Tree view name">
-                    <field name="clave_mov"/>
-                    <field name="producto_id"/>
-                    <field name="departamento_id"/>
-                    <field name="fecha_entrada"/>
-                    <field name="fecha_salida"/>
-                </tree>
-            </field>
-            </record>
+  <data>
 
-            <record id="movimientos_form" model="ir.ui.view">
-            <field name="name">materiales.movimientos.form</field>
-            <field name="model">materiales.movimientos</field>
-            <field name="type">form</field>
-            <field name="priority">11</field>
-            <field name="arch" type="xml">  
-                <form string="Form view name">
-                <sheet>
-                    <group>
-                        <field name="clave_mov"/>
-                        <field name="producto_id"/>
-                        <field name="departamento_id"/>
-                        <field name="fecha_entrada"/>
-                        <field name="fecha_salida"/>
-                    </group>
-                </sheet>
-                </form>
-            </field>
-            </record> 
+    <record id="movimientos_tree" model="ir.ui.view">
+      <field name="name">materiales.movimientos.tree</field>
+      <field name="model">materiales.movimientos</field>
+      <field name="type">tree</field>
+      <field name="priority">10</field>
+      <field name="arch" type="xml">  
+        <tree string="Tree view name">
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
 
-            <record id="movimientos_search" model="ir.ui.view">
-            <field name="name">materiales.movimientos.search</field>
-            <field name="model">materiales.movimientos</field>
-            <field name="priority">12</field>
-            <field name="arch" type="xml">
-                <search>
-                        <field name="clave_mov"/>
-                        <field name="producto_id"/>
-                        <field name="departamento_id"/>
-                        <field name="fecha_entrada"/>
-                        <field name="fecha_salida"/>
-                </search>
-            </field>
-            </record>
+    <record id="movimientos_form" model="ir.ui.view">
+      <field name="name">materiales.movimientos.form</field>
+      <field name="model">materiales.movimientos</field>
+      <field name="priority">11</field>
+      <field name="arch" type="xml">  
+        <form string="movimientos">
+          <sheet>
+            <!-- <field name="foto" widget="image" class="oe_left oe_avatar"/> -->
+            <div class="oe_tittle oe_text_center">
+              <h3>
+                <field name="name"/>
+              </h3>
+            </div>
+            <group class="oe_right">
+              <group>
+                  
+              </group>
+              <group>
+                  
+              </group>
+            </group>
+            <group>
+              
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record> 
 
-            <record id="movimientos_kanban" model="ir.ui.view">
-            <field name="name">materiales.movimientos.kanban</field>
-            <field name="model">materiales.movimientos</field>
-            <field name="priority">13</field>
-            <field name="arch" type="xml">
-                <kanban>
-                <templates>
-                    <t t-name="kanban-box">
-                    <div>
-                        <ul>
-                        <group>
-                            <li t-if="record.clave_mov.raw_value">No. serie:<field name="clave_mov"/></li>
-                            <li t-if="record.producto_id.raw_value">producto:<field name="producto_id"/></li>
-                            <li t-if="record.departamento_id.raw_value">Fecha compra:<field name="departamento_id"/></li>
-                            <li t-if="record.fecha_entrada.raw_value">Departamento:<field name="fecha_entrada"/></li>
-                            <li t-if="record.fecha_salida.raw_value">Costo unidad:<field name="fecha_salida"/></li>
-                        </group>
-                        </ul>
-                    </div>
-                    </t>
-                </templates>
-                </kanban>
-            </field>
-            </record>
-
-            <record id="movimientos_action" model="ir.actions.act_window">
-            <field name="name">movimientos</field>
-            <field name="res_model">materiales.movimientos</field>
-            <field name="views_type">form</field>
-            <field name="view_mode">tree,kanban,form,search</field>
-        </record>
-    </data>
+    <record id="movimientos_action" model="ir.actions.act_window">
+      <field name="name">movimientos</field>
+      <field name="res_model">materiales.movimientos</field>
+      <field name="views_type">tree</field>
+      <field name="view_mode">tree,form</field>
+      <!-- <field name="view_mode">tree,kanban,form,search</field> -->
+    </record> 
+  </data>
 </odoo>

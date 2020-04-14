@@ -4,5 +4,4 @@ from odoo import models, fields, api
 
 class Ubicaciones(models.Model):
     _name = "materiales.ubicaciones"
-    name = "Ubicacion"
-    descripcion = "Descripcion"
+    name = fields.Char("Ubicacion", required=True)

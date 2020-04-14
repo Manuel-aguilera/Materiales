@@ -2,9 +2,9 @@
 <odoo>
   <data>
 
-    <record id="departamentos_tree" model="ir.ui.view">
-      <field name="name">materiales.departamentos.tree</field>
-      <field name="model">materiales.departamentos</field>
+    <record id="proveedores_tree" model="ir.ui.view">
+      <field name="name">materiales.proveedores.tree</field>
+      <field name="model">materiales.proveedores</field>
       <field name="type">tree</field>
       <field name="priority">10</field>
       <field name="arch" type="xml">  
@@ -14,12 +14,12 @@
       </field>
     </record>
 
-    <record id="departamentos_form" model="ir.ui.view">
-      <field name="name">materiales.departamentos.form</field>
-      <field name="model">materiales.departamentos</field>
+    <record id="proveedores_form" model="ir.ui.view">
+      <field name="name">materiales.proveedores.form</field>
+      <field name="model">materiales.proveedores</field>
       <field name="priority">11</field>
       <field name="arch" type="xml">  
-        <form string="departamentos">
+        <form string="proveedores">
           <sheet>
             <!-- <field name="foto" widget="image" class="oe_left oe_avatar"/> -->
             <div class="oe_tittle oe_text_center">
@@ -43,9 +43,9 @@
       </field>
     </record> 
 
-    <record id="departamentos_action" model="ir.actions.act_window">
-      <field name="name">departamentos</field>
-      <field name="res_model">materiales.departamentos</field>
+    <record id="proveedores_action" model="ir.actions.act_window">
+      <field name="name">proveedores</field>
+      <field name="res_model">materiales.proveedores</field>
       <field name="views_type">tree</field>
       <field name="view_mode">tree,form</field>
       <!-- <field name="view_mode">tree,kanban,form,search</field> -->

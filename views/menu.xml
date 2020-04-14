@@ -9,41 +9,59 @@
       sequence="99"
     />
     <menuitem 
+      name="Compras"
+      id="Materiales_compras"
+      parent="Menu_principal"
+      action="compras_action"
+      sequence="11"
+    />
+
+    <menuitem 
+      name="Departamentos"
+      id="Materiales_departamentos"
+      parent="Menu_principal"
+      action="departamentos_action"
+      sequence="13"
+    />
+
+    <menuitem 
+      name="Inventarios"
+      id="Materiales_inventarios"
+      parent="Menu_principal"
+      action="inventarios_action"
+      sequence="16"
+    />
+
+    <menuitem 
+      name="Movimientos"
+      id="Materiales_movimientos"
+      parent="Menu_principal"
+      action="movimientos_action"
+      sequence="15"
+    />
+
+    <menuitem 
       name="Productos"
       id="Materiales_productos"
       parent="Menu_principal"
       action="productos_action"
       sequence="10"
     />
-    <menuitem 
-      name="Departamentos"
-      id="Materiales_departamentos"
-      parent="Menu_principal"
-      action="departamentos_action"
-      sequence="11"
-    />
-    <menuitem 
-      name="Movimientos"
-      id="Materiales_movimientos"
-      parent="Menu_principal"
-      action="movimientos_action"
-      sequence="12"
-    />
 
-    <!-- Para inventarios, pero ahora no lo vamos a utilizar -->
-    <!-- <menuitem 
-      name="Inventario"
-      id="Materiales_inventario"
-      parent="Menu_principal"
-      action="inventario_action"
-      sequence="13"
-    /> -->
     <menuitem 
-      name="Series"
-      id="Materiales_series"
+      name="Proveedores"
+      id="Materiales_proveedores"
       parent="Menu_principal"
-      action="series_action"
+      action="proveedores_action"
       sequence="12"
+    />
+    
+    <menuitem 
+      name="Ubicaciones"
+      id="Materiales_ubicaciones"
+      parent="Menu_principal"
+      action="ubicaciones_action"
+      sequence="14"
     />
 
   </data>

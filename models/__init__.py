@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from . import models
-from . import productos
-from . import inventario
-from . import movimientos
+from . import compras
 from . import departamentos
+from . import inventarios
+from . import movimientos
+from . import productos
+from . import proveedores
 from . import series
 from . import ubicaciones

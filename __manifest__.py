@@ -26,14 +26,16 @@
     'data': [
         'security/grupos.xml',
         'security/ir.model.access.csv',
+        'views/compras.xml',
         'views/departamentos.xml',
+        'views/inventarios.xml',
         'views/movimientos.xml',
-        'views/series.xml',
-        # 'views/inventario.xml',
         'views/productos.xml',
+        'views/proveedores.xml',
+        'views/series.xml',
+        'views/ubicaciones.xml',
         'views/menu.xml',
-        'views/views.xml',
-        'views/templates.xml',
+        # 'views/templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

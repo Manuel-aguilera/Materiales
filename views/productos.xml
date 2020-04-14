@@ -14,7 +14,6 @@
           <field name="costo"/>
           <field name="cantidad"/>
           <field name="descripcion"/>
-          <field name="num_series_ids"/>
         </tree>
       </field>
     </record>
@@ -43,7 +42,7 @@
               </group>
             </group>
             <group>
-              <field name="num_series_ids"/>
+              <!-- <field name="num_series_ids"/> -->
             </group>
           </sheet>
         </form>
