@@ -10,6 +10,11 @@
       <field name="arch" type="xml">  
         <tree string="Tree view name">
           <field name="name"/>
+          <field name="proveedor"/>
+          <field name="fecha_compra"/>
+          <field name="total_compras"/>
+          <field name="total_pagado"/>
+          <field name="productos_ids"/>
         </tree>
       </field>
     </record>
@@ -20,23 +25,30 @@
       <field name="priority">11</field>
       <field name="arch" type="xml">  
         <form string="compras">
+          <header>
+              <button name="eliminar" type="object" class="oe_highlight" string="Eliminar"/>
+          </header>
           <sheet>
-            <!-- <field name="foto" widget="image" class="oe_left oe_avatar"/> -->
-            <div class="oe_tittle oe_text_center">
-              <h3>
-                <field name="name"/>
-              </h3>
-            </div>
-            <group class="oe_right">
+            <group class="" string="Datos de compra">
               <group>
-                  
+                  <field name="name"/>
+                  <field name="proveedor"/>
+                  <field name="fecha_compra"/>
               </group>
               <group>
-                  
+                  <field name="total_compras"/>
+                  <field name="total_pagado"/>
               </group>
             </group>
-            <group>
-              
+            <group string="Detalle productos">
+                <field name="productos_ids" nolabel="1" >
+                  <tree string="Productos" editable="top">
+                    <field name="producto"/>
+                    <field name="cantidad"/>
+                    <field name="costo"/>
+                    <field name="total"/>
+                  </tree>
+                </field>
             </group>
           </sheet>
         </form>

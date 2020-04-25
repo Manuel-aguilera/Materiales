@@ -9,22 +9,34 @@
             <field name="arch" type="xml">  
                 <tree string="Tree view name">
                     <field name="name"/>
-                    <field name="caducidad"/>
+                    <field name="ubicacion"/>
+                    <field name="status"/>
+                    <field name="vida_util"/>
                 </tree>
             </field>
         </record>
-
+        
         <record id="series_form" model="ir.ui.view">
-            <field name="name">materiales.series.form</field>
-            <field name="model">materiales.series</field>
-            <field name="priority">11</field>
-            <field name="arch" type="xml">  
-                <form string="series">
-                    <field name="name"/>
-                    <field name="caducidad"/>
-                </form>
-            </field>
-        </record> 
+      <field name="name">materiales.series.form</field>
+      <field name="model">materiales.series</field>
+      <field name="priority">11</field>
+      <field name="arch" type="xml">  
+        <form string="series">
+          <sheet>
+            <group class="">
+              <group>
+                  <field name="name"/>
+                  <field name="ubicacion"/>
+              </group>
+              <group>
+                  <field name="status"/>
+                  <field name="vida_util"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record> 
 
         <!-- <record id="series_action" model="ir.actions.act_window">
         <field name="name">Series</field>

@@ -10,6 +10,8 @@
       <field name="arch" type="xml">  
         <tree string="Tree view name">
           <field name="name"/>
+          <field name="descripcion"/>
+          <field name="es_almacen"/>
         </tree>
       </field>
     </record>
@@ -22,21 +24,10 @@
         <form string="ubicaciones">
           <sheet>
             <!-- <field name="foto" widget="image" class="oe_left oe_avatar"/> -->
-            <div class="oe_tittle oe_text_center">
-              <h3>
+            <group string="Datos de la ubicación">
                 <field name="name"/>
-              </h3>
-            </div>
-            <group class="oe_right">
-              <group>
-                  
-              </group>
-              <group>
-                  
-              </group>
-            </group>
-            <group>
-              
+                <field name="descripcion"/>
+                <field name="es_almacen"/>
             </group>
           </sheet>
         </form>

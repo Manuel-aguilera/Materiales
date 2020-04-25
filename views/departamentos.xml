@@ -9,7 +9,10 @@
       <field name="priority">10</field>
       <field name="arch" type="xml">  
         <tree string="Tree view name">
+          <field name="clave_departamento"/>
           <field name="name"/>
+          <field name="encargado"/>
+          <field name="ubicaciones_ids"/>
         </tree>
       </field>
     </record>
@@ -21,22 +24,15 @@
       <field name="arch" type="xml">  
         <form string="departamentos">
           <sheet>
-            <!-- <field name="foto" widget="image" class="oe_left oe_avatar"/> -->
-            <div class="oe_tittle oe_text_center">
-              <h3>
+            <group string="Datos del departamento">
+                <field name="clave_departamento"/>
                 <field name="name"/>
-              </h3>
-            </div>
-            <group class="oe_right">
-              <group>
-                  
-              </group>
-              <group>
-                  
-              </group>
+                <field name="encargado"/>
             </group>
-            <group>
-              
+            <group string="Ubicaciones">
+                <field name="ubicaciones_ids" nolabel="1">
+                  
+                </field>
             </group>
           </sheet>
         </form>
@@ -48,7 +44,6 @@
       <field name="res_model">materiales.departamentos</field>
       <field name="views_type">tree</field>
       <field name="view_mode">tree,form</field>
-      <!-- <field name="view_mode">tree,kanban,form,search</field> -->
     </record> 
   </data>
 </odoo>

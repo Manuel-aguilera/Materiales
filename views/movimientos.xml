@@ -10,6 +10,9 @@
       <field name="arch" type="xml">  
         <tree string="Tree view name">
           <field name="name"/>
+          <field name="tipo"/>
+          <field name="fecha"/>
+          <field name="movimientos_ids" nolabel="1"/>
         </tree>
       </field>
     </record>
@@ -20,23 +23,25 @@
       <field name="priority">11</field>
       <field name="arch" type="xml">  
         <form string="movimientos">
+          <header>
+              <button name="eliminar" type="object" class="oe_highlight" string="Eliminar"/>
+          </header>
           <sheet>
-            <!-- <field name="foto" widget="image" class="oe_left oe_avatar"/> -->
-            <div class="oe_tittle oe_text_center">
-              <h3>
-                <field name="name"/>
-              </h3>
-            </div>
-            <group class="oe_right">
-              <group>
-                  
-              </group>
-              <group>
-                  
-              </group>
+            <group class="" string="Datos del Movimiento">
+              <field name="name"/>
+              <field name="tipo"/>
+              <field name="fecha"/>
             </group>
-            <group>
-              
+            <group string="Detalle movimientos">
+              <field name="movimientos_ids" nolabel="1">
+                <tree string="Productos" editable="top">
+                  <field name="producto"/>
+                  <field name="series"/>
+                  <field name="cantidad"/>
+                  <field name="ubicacion_texto"/>
+                  <field name="ubicacion_destino"/>
+                </tree> 
+              </field>
             </group>
           </sheet>
         </form>

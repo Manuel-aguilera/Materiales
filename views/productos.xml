@@ -9,11 +9,14 @@
       <field name="priority">10</field>
       <field name="arch" type="xml">  
         <tree string="Tree view name">
-          <field name="serie_id"/>
           <field name="name"/>
-          <field name="costo"/>
+          <field name="modelo"/>
+          <field name="origen_recurso"/>
+          <field name="presupuesto_estado"/>
           <field name="cantidad"/>
+          <field name="costo"/>
           <field name="descripcion"/>
+          <field name="series_ids"/>
         </tree>
       </field>
     </record>
@@ -31,18 +34,21 @@
                 <field name="name"/>
               </h3>
             </div>
-            <group class="oe_right">
+            <group class="">
               <group>
-                  <field name="serie_id"/>
-                  <field name="descripcion"/>
+                  <field name="modelo"/>
+                  <field name="origen_recurso"/>
+                  <field name="presupuesto_estado"/>
               </group>
               <group>
-                  <field name="costo"/>
                   <field name="cantidad"/>
+                  <field name="costo"/>
+                  <field name="descripcion"/>
+                  <field name="cantidad_disponible"/>
               </group>
             </group>
-            <group>
-              <!-- <field name="num_series_ids"/> -->
+            <group string="Series">
+              <field name="series_ids" nolabel="1"/>
             </group>
           </sheet>
         </form>
@@ -98,5 +104,6 @@
       <field name="view_mode">tree,form</field>
       <!-- <field name="view_mode">tree,kanban,form,search</field> -->
     </record> 
+
   </data>
 </odoo>

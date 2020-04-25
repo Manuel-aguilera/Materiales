@@ -1,9 +1,12 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 productos_access,Modelo productos,model_materiales_productos,materiales_admin_id,1,1,1,1
+detalle_productos_access,Modelo detalle_productos,model_materiales_detalle_productos,materiales_admin_id,1,1,1,1
 compras_access,Modelo compras,model_materiales_compras,materiales_admin_id,1,1,1,1
 departamentos_access,Modelo departamentos,model_materiales_departamentos,materiales_admin_id,1,1,1,1
 inventarios_access,Modelo inventarios,model_materiales_inventarios,materiales_admin_id,1,1,1,1
 movimientos_access,Modelo movimientos,model_materiales_movimientos,materiales_admin_id,1,1,1,1
+detalle_movimientos_access,Modelo detalle_movimientos,model_materiales_detalle_movimientos,materiales_admin_id,1,1,1,1
 proveedores_access,Modelo proveedores,model_materiales_proveedores,materiales_admin_id,1,1,1,1
 series_access,Modelo series,model_materiales_series,materiales_admin_id,1,1,1,1
 ubicaciones_access,Modelo ubicaciones,model_materiales_ubicaciones,materiales_admin_id,1,1,1,1
+

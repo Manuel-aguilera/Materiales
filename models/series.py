@@ -5,10 +5,14 @@ from datetime import datetime
 
 class Series(models.Model):
     _name = "materiales.series"
-    name = fields.Char("Número de serie")
-    # num_serie = fields.Integer("Número de serie")
-    # producto = fields.Many2one('materiales.productos', "Producto")
-    caducidad = fields.Date("Caducidad")
+    name = fields.Char(string="Número de serie")
+    producto_id = fields.Many2one('materiales.productos', string="Producto")
+    ubicacion = fields.Many2one('materiales.ubicaciones', string="Ubicación")
+    status = fields.Selection(
+        [('NUEVO', 'NUEVO'), ('SEMINUEVO', 'SEMINUEVO'), ('USADO', 'USADO')], string="Status")
+    vida_util = origen_recurso = fields.Selection(
+        [('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5'), ('6', '6'), ('7', '7'),
+         ('8', '8'), ('9', '9'), ('10', '10')], string="Años de vida útil")
 
     # @api.model
     # def create(self, vals):

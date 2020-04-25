@@ -10,6 +10,11 @@
       <field name="arch" type="xml">  
         <tree string="Tree view name">
           <field name="name"/>
+          <field name="celular"/>
+          <field name="correo"/>
+          <field name="pais"/>
+          <field name="estado"/>
+          <field name="poblacion"/>
         </tree>
       </field>
     </record>
@@ -21,22 +26,14 @@
       <field name="arch" type="xml">  
         <form string="proveedores">
           <sheet>
-            <!-- <field name="foto" widget="image" class="oe_left oe_avatar"/> -->
-            <div class="oe_tittle oe_text_center">
-              <h3>
-                <field name="name"/>
-              </h3>
-            </div>
-            <group class="oe_right">
-              <group>
-                  
-              </group>
-              <group>
-                  
-              </group>
-            </group>
-            <group>
-              
+            <field name="foto" widget="image" class="oe_left oe_avatar"/>
+            <group class="" string="Datos del proveedor">
+              <field name="name"/>
+                  <field name="celular"/>
+                  <field name="correo"/>
+                  <field name="pais"/>
+                  <field name="estado"/>
+                  <field name="poblacion"/>
             </group>
           </sheet>
         </form>

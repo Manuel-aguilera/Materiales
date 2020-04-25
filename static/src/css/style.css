@@ -1,0 +1,11 @@
+.margenAuto {
+	margin-left: 2em;
+}
+.textoCentro {
+	text-align: center;
+	padding-right: 10px;
+}
+.letra {
+	font-size: x-large;
+	font: bold;
+}

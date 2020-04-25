@@ -26,6 +26,7 @@
     'data': [
         'security/grupos.xml',
         'security/ir.model.access.csv',
+        'views/secuencias.xml',
         'views/compras.xml',
         'views/departamentos.xml',
         'views/inventarios.xml',
@@ -35,7 +36,8 @@
         'views/series.xml',
         'views/ubicaciones.xml',
         'views/menu.xml',
-        # 'views/templates.xml',
+        'reportes/carta_compra.xml',
+        'reportes/reporte_compra.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
