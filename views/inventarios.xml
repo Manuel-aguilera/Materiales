@@ -8,7 +8,7 @@
       <field name="type">tree</field>
       <field name="priority">10</field>
       <field name="arch" type="xml">  
-        <tree string="Tree view name" create="false">
+        <tree string="Inventarios">
           <field name="name"/>
           <field name="producto"/>
           <field name="modelo"/>
@@ -29,39 +29,51 @@
       </field>
     </record>
 
-    <!-- <record id="inventarios_form" model="ir.ui.view">
+    <record id="inventarios_form" model="ir.ui.view">
       <field name="name">materiales.inventarios.form</field>
       <field name="model">materiales.inventarios</field>
       <field name="priority">11</field>
       <field name="arch" type="xml">  
-        <form string="inventarios">
+        <form string="Inventarios" edit="false" create="false">
           <sheet>
             <div class="oe_tittle oe_text_center">
               <h3>
-                <field name="name"/>
+                <span style="margin-right: 50px;"><field name="name"/></span>
+                <field name="producto"/>
               </h3>
             </div>
-            <group class="oe_right">
+            <group class="">
               <group>
-                  
+                  <field name="modelo"/>
+                  <field name="serie"/>
+                  <field name="ubicacion"/>
+                  <field name="departamento"/>
               </group>
               <group>
-                  
+                  <field name="status"/>
+                  <field name="vida_util"/>
+                  <field name="presupuesto_estado"/>
+                  <field name="origen_recurso"/>
+                  <field name="descripcion"/>
               </group>
-            </group>
-            <group>
-              
+              <group>
+                  <field name="proveedor"/>
+                  <field name="lugar_compra"/>
+                  <field name="fecha_compra"/>
+                  <field name="costo"/>
+                  <field name="valoracion"/>
+              </group>
             </group>
           </sheet>
         </form>
       </field>
-    </record>  -->
+    </record> 
 
     <record id="inventarios_action" model="ir.actions.act_window">
-      <field name="name">inventarios</field>
+      <field name="name">Inventarios</field>
       <field name="res_model">materiales.inventarios</field>
-      <field name="views_type">tree</field>
-      <field name="view_mode">tree</field>
+      <field name="views_type">tree,form</field>
+      <field name="view_mode">tree,form</field>
       <!-- <field name="view_mode">tree,kanban,form,search</field> -->
     </record> 
   </data>

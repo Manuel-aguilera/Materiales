@@ -37,7 +37,8 @@
         'views/ubicaciones.xml',
         'views/menu.xml',
         'reportes/carta_compra.xml',
-        'reportes/reporte_compra.xml',
+        'reportes/carta_inventario.xml',
+        'reportes/reportes.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

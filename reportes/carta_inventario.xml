@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <data>
+        <template id="reporte_inventario">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                           <br/><br/><br/>
+                           <br/><br/><br/>
+                           <div class="oe_structure"/>
+                           <h3 style="text-align: center; font: bold black">Reporte de inventario</h3>
+                           <br/> 
+                           <div class="row">
+                                <div class="col-xs-2"/>
+                                <div class="col-xs-8" style="text-align: center;">
+                                    <table style="width: 100%; margin-left: 0px;">
+                                        <tr>
+                                            <th style="background-color: #dddddd;  text-align: left; border: 1px solid #dddddd; padding-left: 10px;">Clave</th>
+                                            <th style="background-color: #dddddd;  text-align: left; border: 1px solid #dddddd; padding-left: 10px;">Producto</th>
+                                            <th style="background-color: #dddddd;  text-align: left; border: 1px solid #dddddd; padding-left: 10px;">Modelo</th>
+                                            <th style="background-color: #dddddd;  text-align: right; border: 1px solid #dddddd; padding-right: 10px;">Serie</th>
+                                            <th style="background-color: #dddddd;  text-align: left; border: 1px solid #dddddd; padding-left: 10px;">Descripción</th>
+                                            <th style="background-color: #dddddd;  text-align: left; border: 1px solid #dddddd; padding-left: 10px;">Ubicación</th>
+                                            <th style="background-color: #dddddd;  text-align: left; border: 1px solid #dddddd; padding-left: 10px;">Departamento</th>
+                                            <th style="background-color: #dddddd;  text-align: left; border: 1px solid #dddddd; padding-left: 10px;">Estatus</th>
+                                            <th style="background-color: #dddddd;  text-align: right; border: 1px solid #dddddd; padding-right: 10px;">Vida útil</th>
+                                            <th style="background-color: #dddddd;  text-align: right; border: 1px solid #dddddd; padding-right: 10px;">Presup. estado</th>
+                                            <th style="background-color: #dddddd;  text-align: left; border: 1px solid #dddddd; padding-left: 10px;">Origen recurso</th>
+                                            <th style="background-color: #dddddd;  text-align: left; border: 1px solid #dddddd; padding-left: 10px;">Lugar compra</th>
+                                            <th style="background-color: #dddddd;  text-align: left; border: 1px solid #dddddd; padding-left: 10px;">Proveedor</th>
+                                            <th style="background-color: #dddddd;  text-align: right; border: 1px solid #dddddd; padding-right: 10px;">Fecha compra</th>
+                                            <th style="background-color: #dddddd;  text-align: right; border: 1px solid #dddddd; padding-right: 10px;">Costo</th>
+                                            <th style="background-color: #dddddd;  text-align: right; border: 1px solid #dddddd; padding-right: 10px;">Valoracion</th>
+                                        </tr>
+                                        <t t-call="materiales.reporte_inventario_cartas"/>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>    
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <template id="reporte_inventario_cartas">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <tr>
+                        <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.name"/></td>
+                        <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.producto.name"/></td>
+                        <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.modelo"/></td>
+                        <td style=" text-align: right; border: 1px solid #dddddd; padding-right: 10px;"><t t-esc="o.serie.name"/></td>
+                        <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.descripcion"/></td>
+                        <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.ubicacion.name"/></td>
+                        <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.departamento.name"/></td>
+                        <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.status"/></td>
+                        <td style=" text-align: right; border: 1px solid #dddddd; padding-right: 10px;"><t t-esc="o.vida_util"/></td>
+                        <td style=" text-align: right; border: 1px solid #dddddd; padding-right: 10px;"><t t-esc="o.presupuesto_estado"/></td>
+                        <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.origen_recurso"/></td>
+                        <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.lugar_compra"/></td>
+                        <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.proveedor.name"/></td>
+                        <td style=" text-align: right; border: 1px solid #dddddd; padding-right: 10px;"><t t-esc="o.fecha_compra"/></td>
+                        <td style=" text-align: right; border: 1px solid #dddddd; padding-right: 10px;"><t t-esc="o.costo"/></td>
+                        <td style=" text-align: right; border: 1px solid #dddddd; padding-right: 10px;"><t t-esc="o.valoracion"/></td>
+                    </tr>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_inventarios" model="report.paperformat">
+            <field name="name">Formato de papel</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <!-- <field name="format">custom</field> -->
+            <!-- <field name="page_height">80</field>
+            <field name="page_width">175</field> -->
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">10</field>
+            <field name="margin_right">10</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">5</field>
+            <field name="dpi">300</field>
+        </record>
+
+        <!-- <record id="reporte_inventarios_id" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="paperformat_inventarios"/>
+        </record> -->
+    </data> 
+</odoo>
