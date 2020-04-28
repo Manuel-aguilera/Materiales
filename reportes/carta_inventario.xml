@@ -3,8 +3,7 @@
    <data>
         <template id="reporte_inventario">
             <t t-call="web.html_container">
-                <t t-foreach="docs" t-as="o">
-                    <t t-call="web.external_layout">
+                <t t-call="web.external_layout">
                         <div class="page">
                            <br/><br/><br/>
                            <br/><br/><br/>
@@ -33,38 +32,34 @@
                                             <th style="background-color: #dddddd;  text-align: right; border: 1px solid #dddddd; padding-right: 10px;">Costo</th>
                                             <th style="background-color: #dddddd;  text-align: right; border: 1px solid #dddddd; padding-right: 10px;">Valoracion</th>
                                         </tr>
-                                        <t t-call="materiales.reporte_inventario_cartas"/>
+
+                                        <t t-foreach="docs" t-as="o"> 
+                                            <tr>
+                                                <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.name"/></td>
+                                                <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.producto.name"/></td>
+                                                <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.modelo"/></td>
+                                                <td style=" text-align: right; border: 1px solid #dddddd; padding-right: 10px;"><t t-esc="o.serie.name"/></td>
+                                                <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.descripcion"/></td>
+                                                <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.ubicacion.name"/></td>
+                                                <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.departamento.name"/></td>
+                                                <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.status"/></td>
+                                                <td style=" text-align: right; border: 1px solid #dddddd; padding-right: 10px;"><t t-esc="o.vida_util"/></td>
+                                                <td style=" text-align: right; border: 1px solid #dddddd; padding-right: 10px;"><t t-esc="o.presupuesto_estado"/></td>
+                                                <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.origen_recurso"/></td>
+                                                <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.lugar_compra"/></td>
+                                                <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.proveedor.name"/></td>
+                                                <td style=" text-align: right; border: 1px solid #dddddd; padding-right: 10px;"><t t-esc="o.fecha_compra"/></td>
+                                                <td style=" text-align: right; border: 1px solid #dddddd; padding-right: 10px;"><t t-esc="o.costo"/></td>
+                                                <td style=" text-align: right; border: 1px solid #dddddd; padding-right: 10px;"><t t-esc="o.valoracion"/></td>
+                                            </tr>
+                                        </t>
+                                        
                                     </table>
                                 </div>
                             </div>
                         </div>    
                     </t>
-                </t>
-            </t>
-        </template>
-
-        <template id="reporte_inventario_cartas">
-            <t t-call="web.html_container">
-                <t t-foreach="docs" t-as="o">
-                    <tr>
-                        <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.name"/></td>
-                        <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.producto.name"/></td>
-                        <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.modelo"/></td>
-                        <td style=" text-align: right; border: 1px solid #dddddd; padding-right: 10px;"><t t-esc="o.serie.name"/></td>
-                        <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.descripcion"/></td>
-                        <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.ubicacion.name"/></td>
-                        <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.departamento.name"/></td>
-                        <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.status"/></td>
-                        <td style=" text-align: right; border: 1px solid #dddddd; padding-right: 10px;"><t t-esc="o.vida_util"/></td>
-                        <td style=" text-align: right; border: 1px solid #dddddd; padding-right: 10px;"><t t-esc="o.presupuesto_estado"/></td>
-                        <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.origen_recurso"/></td>
-                        <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.lugar_compra"/></td>
-                        <td style=" text-align: left; border: 1px solid #dddddd; padding-left: 10px;"><t t-esc="o.proveedor.name"/></td>
-                        <td style=" text-align: right; border: 1px solid #dddddd; padding-right: 10px;"><t t-esc="o.fecha_compra"/></td>
-                        <td style=" text-align: right; border: 1px solid #dddddd; padding-right: 10px;"><t t-esc="o.costo"/></td>
-                        <td style=" text-align: right; border: 1px solid #dddddd; padding-right: 10px;"><t t-esc="o.valoracion"/></td>
-                    </tr>
-                </t>
+                
             </t>
         </template>
 
