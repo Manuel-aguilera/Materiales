@@ -9,6 +9,7 @@ class Inventarios(models.Model):
     producto = fields.Many2one(
         "materiales.productos", string="Producto")
     modelo = fields.Char(string="Modelo")
+    serie = fields.Many2one("materiales.series", string="No. serie")
     descripcion = fields.Text(string="Descripción")
     departamento = fields.Many2one(
         "materiales.departamentos", string="Departamento")
@@ -37,6 +38,7 @@ class Inventarios(models.Model):
 
     @api.model
     def create(self, vals):
+        # Para el numero de folio
         if vals.get('name', 'New') == 'New':
             codigo = self.env['ir.sequence'].next_by_code(
                 'inventario.servicio') or 'New'

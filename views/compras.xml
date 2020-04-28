@@ -38,6 +38,7 @@
               <group>
                   <field name="total_compras"/>
                   <field name="total_pagado"/>
+                  <field name="prueba"/>
               </group>
             </group>
             <group string="Detalle productos">

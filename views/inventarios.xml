@@ -10,18 +10,19 @@
       <field name="arch" type="xml">  
         <tree string="Tree view name" create="false">
           <field name="name"/>
-          <!-- <field name="producto"/> -->
+          <field name="producto"/>
           <field name="modelo"/>
+          <field name="serie"/>
           <field name="descripcion"/>
-          <!-- <field name="ubicacion"/> -->
-          <!-- <field name="departamento"/> -->
-          <!-- <field name="status"/> -->
-          <!-- <field name="vida_util"/> -->
+          <field name="ubicacion"/>
+          <field name="departamento"/>
+          <field name="status"/>
+          <field name="vida_util"/>
           <field name="presupuesto_estado"/>
           <field name="origen_recurso"/>
-          <!-- <field name="lugar_compra"/> -->
-          <!-- <field name="proveedor"/> -->
-          <!-- <field name="fecha_compra"/> -->
+          <field name="lugar_compra"/>
+          <field name="proveedor"/>
+          <field name="fecha_compra"/>
           <field name="costo"/>
           <field name="valoracion"/>
         </tree>
