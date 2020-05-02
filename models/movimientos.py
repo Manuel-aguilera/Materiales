@@ -21,10 +21,21 @@ class Movimientos(models.Model):
 
     @api.model
     def create(self, vals):
+        # para los folios
         if vals.get('name', 'New') == 'New':
             codigo = self.env['ir.sequence'].next_by_code(
                 'movimiento.servicio') or 'New'
             vals['name'] = codigo
+        # configuramos la nueva ubicación para inventarios
+        inventarios = self.env["materiales.inventarios"]
+        ubicaciones = self.env["materiales.ubicaciones"]
+        for dic in vals["movimientos_ids"]:
+            inv = inventarios.search(
+                [("producto", "=", dic[2].get("producto")), ("serie", "=", dic[2].get("series"))])
+            ubicacion = ubicaciones.browse(dic[2].get("ubicacion_destino"))
+            inv.write({"departamento": ubicacion.departamento_id,
+                       "ubicacion": dic[2].get("ubicacion_destino")})
+
         result = super(Movimientos, self).create(vals)
         return result
 
