@@ -9,7 +9,9 @@ class Compras(models.Model):
                        required=True, copy=False, default='New')
     proveedor = fields.Many2one("materiales.proveedores", string="Proveedor")
     fecha_compra = fields.Date(string="Fecha de compra")
-    prueba = fields.Char(string="Valor")
+    file = fields.Binary(string='Factura de compra', attachment=True)
+    file_name = fields.Char("Nombre de archivo")
+
     total_compras = fields.Integer(
         compute="_total_compras", string="Total de compras", readonly=True)
     total_pagado = fields.Integer(
@@ -60,7 +62,7 @@ class Compras(models.Model):
         return super(Compras, self).unlink()
 
     @api.multi
-    def eliminar(self):  # borro todo lo que he creado por wey de una clase  jajaja
+    def eliminar(self):
         borrar = self.env["materiales.detalle_productos"]
         quieroBorrar = borrar.search([])
         prod_borrar = []
@@ -85,3 +87,9 @@ class Compras(models.Model):
             for p in r.productos_ids:
                 total += p.total
             r.total_pagado = total
+
+    @api.constrains('file')
+    def _checar_archivo(self):
+        if str(self.file_name.split(".")[1]) != 'pdf':
+            raise exceptions.except_orm(
+                'Error', 'Solo se permiten archivos en formato PDF')

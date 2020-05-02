@@ -13,7 +13,7 @@ class Movimientos(models.Model):
         "materiales.detalle_movimientos", "movimiento_id", string="Detalle movimientos")
 
     @api.multi
-    def eliminar(self):  # borro todo lo que he creado por wey de una clase  jajaja
+    def eliminar(self):
         borrar = self.env["materiales.detalle_movimientos"]
         quieroBorrar = borrar.search([])
         for b in quieroBorrar:
