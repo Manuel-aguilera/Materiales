@@ -14,6 +14,8 @@
           <field name="fecha_compra"/>
           <field name="total_compras"/>
           <field name="total_pagado"/>
+          <field name="file" filename="file_name"/>
+          <field name="file_name" invisible="1"/>
           <field name="productos_ids"/>
         </tree>
       </field>
@@ -38,7 +40,8 @@
               <group>
                   <field name="total_compras"/>
                   <field name="total_pagado"/>
-                  <field name="prueba"/>
+                  <field name="file" filename="file_name"/>
+                  <field name="file_name" invisible="1"/>
               </group>
             </group>
             <group string="Detalle productos">
