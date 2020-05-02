@@ -41,7 +41,7 @@ class Inventarios(models.Model):
         # Para el numero de folio
         if vals.get('name', 'New') == 'New':
             codigo = self.env['ir.sequence'].next_by_code(
-                'inventario.servicio') or 'New'
+                'inventarios.servicio') or 'New'
             vals['name'] = codigo
         result = super(Inventarios, self).create(vals)
         return result

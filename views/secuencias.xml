@@ -21,7 +21,7 @@
 
         <record id="inventario_servicio_id" model="ir.sequence">
             <field name="name">Inventario servicio</field>
-            <field name="code">inventario.servicio</field>
+            <field name="code">inventarios.servicio</field>
             <field name="active">TRUE</field>
             <field name="prefix">P</field>
             <field name="padding">6</field>
