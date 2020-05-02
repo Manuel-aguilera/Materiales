@@ -19,12 +19,12 @@ class Productos(models.Model):
         "materiales.series", "producto_id", string="Series")
     cantidad_disponible = fields.Integer(compute="_cantidad_disponible",
                                          string="Cantidad disponible", readonly=True)
+    prueba = fields.Char(string="Prueba")
 
     @api.model
     def create(self, vals):
         inventarios = self.env['materiales.inventarios']
         ubicaciones = self.env["materiales.ubicaciones"]
-        series = self.env["materiales.series"]
         valores_inv = {}
         # valores_inv["producto"] = vals["name"]
         valores_inv["modelo"] = vals["modelo"]
@@ -55,16 +55,35 @@ class Productos(models.Model):
             i += 1
         return result
 
-    # @api.multi
-    # def write(self, vals):
-        # inventarios = self.env["materiales.inventarios"]
-        # proveedores = self.env["materiales.proveedores"]
-        # productos = self.env["materiales.productos"]
-        # prod_old = self.productos_ids
-        # for dic in prod_old:
-        #     prod = productos.browse(dic[2].get("producto")) #producto anterior
-        #     inv = inventarios.search([("producto", "=", prod.name)], limit=1)
-        # return super(Compras, self).write(vals)
+    @api.multi
+    def write(self, vals):
+        self.ensure_one()
+        inventarios = self.env["materiales.inventarios"]
+        productos = self.env["materiales.productos"]
+        prod_id = productos.search(
+            [("name", "=", self.name), ("modelo", "=", self.modelo)]).id
+        inv = inventarios.search(
+            [("producto", "=", prod_id)])
+        if not "modelo" in vals:
+            vals["modelo"] = self.modelo
+        if not "origen_recurso" in vals:
+            vals["origen_recurso"] = self.origen_recurso
+        if not "presupuesto_estado" in vals:
+            vals["presupuesto_estado"] = self.presupuesto_estado
+        if not "costo" in vals:
+            vals["costo"] = self.costo
+        if not "descripcion" in vals:
+            vals["descripcion"] = self.descripcion
+        if not "valoracion" in vals:
+            vals["valoracion"] = self.costo
+        inv.write({"modelo": vals["modelo"],
+                   "origen_recurso": vals["origen_recurso"],
+                   "presupuesto_estado": vals["presupuesto_estado"],
+                   "costo": vals["costo"],
+                   "descripcion": vals["descripcion"],
+                   "valoracion": vals["costo"]})
+
+        return super(Productos, self).write(vals)
 
     @api.multi
     def unlink(self):

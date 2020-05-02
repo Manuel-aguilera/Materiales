@@ -69,6 +69,21 @@
       </field>
     </record> 
 
+    <record id="inventarios_search" model="ir.ui.view">
+      <field name="name">materiales.inventarios.search</field>
+      <field name="model">materiales.inventarios</field>
+      <field name="priority">12</field>
+      <field name="arch" type="xml">
+        <search>
+            <filter name="filtro_no_pres_estado" string="No Presup. Estado" domain="[('presupuesto_estado','=',False)]"/>
+            <filter name="filtro_pres_estado" string="Presup. Estado" domain="[('presupuesto_estado','=',True)]"/>
+            <filter name="filtro_origen_recurso_propio" string="Recurso Propio" domain="[('origen_recurso','=','PROPIO')]"/>
+            <filter name="filtro_origen_recurso_estado" string="Recurso Estado" domain="[('origen_recurso','=','ESTADO')]"/>
+            <filter name="filtro_origen_recurso_federal" string="Recurso Federal" domain="[('origen_recurso','=','FEDERAL')]"/>
+        </search>
+      </field>
+    </record>
+
     <record id="inventarios_action" model="ir.actions.act_window">
       <field name="name">Inventarios</field>
       <field name="res_model">materiales.inventarios</field>
